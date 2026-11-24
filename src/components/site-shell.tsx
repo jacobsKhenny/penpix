@@ -1,7 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
-import penpixelLogo from "../assets/penpixel-logo.png.asset.json";
+import penpixelLogo from "../assets/penpixel-full-logo.png.asset.json";
 import { WhatsAppWidget } from "./whatsapp-widget";
 
 const NAV_PAGES = [
@@ -31,10 +31,10 @@ function BrandMark() {
   return (
     <Link
       to="/"
-      className="inline-flex items-center"
+      className="inline-flex items-center rounded-sm bg-surface-light px-3 py-1.5"
       aria-label="PenPixel Digital Press home"
     >
-      <img src={penpixelLogo.url} alt="PenPixel Digital Press" className="h-8 w-auto" />
+      <img src={penpixelLogo.url} alt="PenPixel Digital Press" className="h-7 w-auto" />
     </Link>
   );
 }
@@ -79,28 +79,28 @@ export function SiteShell({ children }: { children: ReactNode }) {
             type="button"
             onClick={() => setDrawerOpen(true)}
             className="inline-flex items-center gap-2 rounded-full border border-border px-3.5 py-1.5 text-xs font-semibold uppercase tracking-wider text-foreground transition-colors hover:border-primary hover:text-primary"
-            aria-label="Open pages drawer"
+            aria-label="Open menu drawer"
             aria-expanded={drawerOpen}
           >
             <Menu className="h-3.5 w-3.5" />
-            <span>Pages</span>
+            <span>Menu</span>
           </button>
         </div>
       </header>
 
       {drawerOpen && (
-        <div className="fixed inset-0 z-50 flex justify-end" role="dialog" aria-modal="true" aria-label="Pages menu">
+        <div className="fixed inset-0 z-50 flex justify-end" role="dialog" aria-modal="true" aria-label="Site menu">
           <button
             type="button"
             className="fixed inset-0 bg-background/75 backdrop-blur-xs"
             onClick={() => setDrawerOpen(false)}
-            aria-label="Close pages drawer"
+            aria-label="Close menu drawer"
           />
           <aside className="relative z-10 flex h-full w-full max-w-sm flex-col justify-between border-l border-border bg-card p-6 shadow-2xl">
             <div>
               <div className="flex items-center justify-between border-b border-border pb-4">
                 <span className="text-xs font-semibold uppercase tracking-widest text-primary">
-                  PenPixel · Pages
+                  PenPixel · Menu
                 </span>
                 <button
                   type="button"
