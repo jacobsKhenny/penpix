@@ -1,5 +1,6 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { Check } from "lucide-react";
+import { WorkSamples } from "../components/work-samples";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -104,6 +105,10 @@ function ServicesPage() {
             </Link>
           </div>
         </section>
+      </div>
+
+      <div className="mt-16">
+        <WorkSamples />
       </div>
     </div>
   );

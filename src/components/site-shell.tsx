@@ -1,6 +1,8 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
+import penpixelLogo from "../assets/penpixel-logo.png.asset.json";
+import { WhatsAppWidget } from "./whatsapp-widget";
 
 const NAV_PAGES = [
   {
@@ -29,11 +31,10 @@ function BrandMark() {
   return (
     <Link
       to="/"
-      className="font-display inline-flex flex-col leading-[0.88] text-sm tracking-tight text-foreground"
+      className="inline-flex items-center"
       aria-label="PenPixel Digital Press home"
     >
-      <span>PEN</span>
-      <span>PXL</span>
+      <img src={penpixelLogo.url} alt="PenPixel Digital Press" className="h-8 w-auto" />
     </Link>
   );
 }
@@ -194,6 +195,8 @@ export function SiteShell({ children }: { children: ReactNode }) {
           </div>
         </div>
       </footer>
+
+      <WhatsAppWidget />
     </div>
   );
 }

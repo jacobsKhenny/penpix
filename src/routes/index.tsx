@@ -1,6 +1,7 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Check } from "lucide-react";
 import { ContactForm } from "../components/contact-form";
+import { TestimonialGallery, WorkSamples } from "../components/work-samples";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -101,6 +102,8 @@ function Index() {
         </div>
       </section>
 
+      <WorkSamples />
+
       <section className="bg-surface-light py-20 text-surface-light-foreground md:py-24">
         <div className="mx-auto max-w-5xl px-6">
           <h2 className="font-display text-center text-3xl sm:text-5xl">
@@ -121,6 +124,7 @@ function Index() {
               </blockquote>
             ))}
           </div>
+          <TestimonialGallery />
         </div>
       </section>
 
