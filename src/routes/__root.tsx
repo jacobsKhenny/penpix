@@ -79,17 +79,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "PenPixel Digital Press — Pixel for growth. Pen for authority." },
+      { title: "PenPixel — Personal branding for business owners" },
       {
         name: "description",
         content:
-          "We help business owners and professionals turn expertise into visibility, authority, and opportunity.",
+          "Done-for-you LinkedIn, Facebook and Instagram, and book writing and publishing for business owners.",
       },
       { property: "og:title", content: "PenPixel Digital Press" },
       {
         property: "og:description",
         content:
-          "We help business owners and professionals turn expertise into visibility, authority, and opportunity.",
+          "Done-for-you LinkedIn, Facebook and Instagram, and book writing and publishing for business owners.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

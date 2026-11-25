@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+- Keep shared contact links, enquiry validation and package data in `src/lib/website-content.ts` so pages and tests use one source of truth.
+- Use the shared Button contact/whatsapp variants for the two primary CTAs to retain consistent appearance.
+- Enquiry submission must not show success until a configured sending service confirms delivery acceptance; sender-domain setup currently blocks delivery.
+- Present supplied proof without modal previews and use inline mobile navigation to avoid pop-ups.
