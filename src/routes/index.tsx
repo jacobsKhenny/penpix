@@ -2,7 +2,7 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import { ContactActions } from "../components/contact-actions";
 import { Button } from "../components/ui/button";
-import { TestimonialGallery, WorkSamples, ClientPhotos } from "../components/work-samples";
+import { TestimonialGallery, WorkSamples } from "../components/work-samples";
 import { HOME_SERVICES } from "../lib/website-content";
 import aanuPhoto from "../assets/aanu-founder.jpeg.asset.json";
 
@@ -55,7 +55,6 @@ function Index() {
       <div className="mx-auto max-w-5xl px-6">
         <p className="text-3xl text-gold" aria-label="Five stars">★★★★★</p>
         <h2 className="font-display mt-4 text-2xl sm:text-4xl">100+ books published · £500,000+ in client revenue</h2>
-        <p className="mt-10 text-lg font-semibold">Trusted by:</p><ClientPhotos />
         <TestimonialGallery />
       </div>
     </section>

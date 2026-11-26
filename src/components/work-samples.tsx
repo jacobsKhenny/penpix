@@ -35,7 +35,28 @@ export function WorkSamples() {
     <div className="mt-10 space-y-10">{TRANSFORMATIONS.map(item => <article key={item.name}><h3 className="font-display mb-4 text-xl">{item.name}</h3><div className="grid grid-cols-2 gap-3 sm:gap-6">{[{ label: "Before", url: item.before }, { label: "After", url: item.after }].map(image => <figure key={image.label}><figcaption className="mb-2 text-base font-semibold text-primary">{image.label}</figcaption><a href={image.url} target="_blank" rel="noopener noreferrer" aria-label={`${item.name} LinkedIn ${image.label}, full image`}><img src={image.url} alt={`${item.name} LinkedIn ${image.label}`} loading="lazy" className="aspect-[3/4] w-full rounded-lg border border-border object-cover object-top" /></a></figure>)}</div></article>)}</div>
     <div className="mt-10 grid gap-6 md:grid-cols-2">{[{ name: "Authority Author LinkedIn Profile", url: showcase1.url }, { name: "Advisory & Tax Planning LinkedIn Profile", url: showcase2.url }].map(item => <a key={item.name} href={item.url} target="_blank" rel="noopener noreferrer"><img src={item.url} alt={item.name} loading="lazy" className="aspect-[4/5] w-full rounded-lg border border-border object-cover object-top" /></a>)}</div>
   </div></section>;
-}
 export function TestimonialGallery() {
-  return <div className="mt-12 divide-y divide-border">{TESTIMONIALS.map(card => <figure key={card.author} className="grid items-start gap-6 py-8 sm:grid-cols-[140px_1fr]"><figcaption className="flex items-center gap-4 text-base font-semibold text-muted-foreground">{CLIENT_PHOTOS.find(client => client.name === card.author) && <img src={CLIENT_PHOTOS.find(client => client.name === card.author)?.photo} alt={card.author} loading="lazy" className="h-14 w-14 rounded-full object-cover" />}{card.author}</figcaption><a href={card.url} target="_blank" rel="noopener noreferrer" className="min-w-0"><img src={card.url} alt={`Client review from ${card.author}`} loading="lazy" className="h-auto w-full max-w-2xl" /></a></figure>)}</div>;
+  return (
+    <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-6 lg:grid-cols-12">
+      {TESTIMONIALS.map((card, i) => (
+        <figure
+          key={card.author}
+          className={
+            "min-w-0 lg:col-start-auto sm:col-span-2 " +
+            (i === 6 ? "sm:col-start-3 " : "") +
+            (i < 3 ? "lg:col-span-4" : "lg:col-span-3")
+          }
+        >
+          <a href={card.url} target="_blank" rel="noopener noreferrer">
+            <img
+              src={card.url}
+              alt={`Client review from ${card.author}`}
+              loading="lazy"
+              className="h-auto w-full rounded-lg border border-border"
+            />
+          </a>
+        </figure>
+      ))}
+    </div>
+  );
 }
