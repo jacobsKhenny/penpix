@@ -21,20 +21,92 @@ const TRANSFORMATIONS = [
   { name: "Joanne", before: joanneBefore.url, after: joanneAfter.url },
   { name: "Marian", before: marianBefore.url, after: marianAfter.url },
 ];
+
 const TESTIMONIALS = [
-  { author: "Claire", url: testimonialClaire.url }, { author: "Dina", url: testimonialDina.url },
-  { author: "Toyin", url: testimonialToyin.url }, { author: "Raj", url: testimonialRaj.url },
-  { author: "Richard", url: testimonialRichard.url }, { author: "Olayinka", url: testimonialOlayinka.url }, { author: "Abi", url: testimonialAbi.url },
+  { author: "Claire", url: testimonialClaire.url },
+  { author: "Dina", url: testimonialDina.url },
+  { author: "Toyin", url: testimonialToyin.url },
+  { author: "Raj", url: testimonialRaj.url },
+  { author: "Richard", url: testimonialRichard.url },
+  { author: "Olayinka", url: testimonialOlayinka.url },
+  { author: "Abi", url: testimonialAbi.url },
 ];
-const CLIENT_PHOTOS = [{ name: "Claire", photo: clairePhoto.url }, { name: "Richard", photo: richardPhoto.url }];
+
+const CLIENT_PHOTOS = [
+  { name: "Claire", photo: clairePhoto.url },
+  { name: "Richard", photo: richardPhoto.url },
+];
+
 export function ClientPhotos() {
-  return <div className="client-photo-row">{CLIENT_PHOTOS.map(client => <figure key={client.name}><img src={client.photo} alt={client.name} loading="lazy" width={72} height={72} /><figcaption>{client.name}</figcaption></figure>)}</div>;
+  return (
+    <div className="client-photo-row">
+      {CLIENT_PHOTOS.map((client) => (
+        <figure key={client.name}>
+          <img src={client.photo} alt={client.name} loading="lazy" width={72} height={72} />
+          <figcaption>{client.name}</figcaption>
+        </figure>
+      ))}
+    </div>
+  );
 }
+
 export function WorkSamples() {
-  return <section className="border-t border-border/70 py-20"><div className="mx-auto max-w-5xl px-6"><h2 className="font-display text-3xl sm:text-4xl">LinkedIn transformations</h2>
-    <div className="mt-10 space-y-10">{TRANSFORMATIONS.map(item => <article key={item.name}><h3 className="font-display mb-4 text-xl">{item.name}</h3><div className="grid grid-cols-2 gap-3 sm:gap-6">{[{ label: "Before", url: item.before }, { label: "After", url: item.after }].map(image => <figure key={image.label}><figcaption className="mb-2 text-base font-semibold text-primary">{image.label}</figcaption><a href={image.url} target="_blank" rel="noopener noreferrer" aria-label={`${item.name} LinkedIn ${image.label}, full image`}><img src={image.url} alt={`${item.name} LinkedIn ${image.label}`} loading="lazy" className="aspect-[3/4] w-full rounded-lg border border-border object-cover object-top" /></a></figure>)}</div></article>)}</div>
-    <div className="mt-10 grid gap-6 md:grid-cols-2">{[{ name: "Authority Author LinkedIn Profile", url: showcase1.url }, { name: "Advisory & Tax Planning LinkedIn Profile", url: showcase2.url }].map(item => <a key={item.name} href={item.url} target="_blank" rel="noopener noreferrer"><img src={item.url} alt={item.name} loading="lazy" className="aspect-[4/5] w-full rounded-lg border border-border object-cover object-top" /></a>)}</div>
-  </div></section>;
+  return (
+    <section className="border-t border-border/70 py-20">
+      <div className="mx-auto max-w-5xl px-6">
+        <h2 className="font-display text-3xl sm:text-4xl">LinkedIn transformations</h2>
+        <div className="mt-10 space-y-10">
+          {TRANSFORMATIONS.map((item) => (
+            <article key={item.name}>
+              <h3 className="font-display mb-4 text-xl">{item.name}</h3>
+              <div className="grid grid-cols-2 gap-3 sm:gap-6">
+                {[
+                  { label: "Before", url: item.before },
+                  { label: "After", url: item.after },
+                ].map((image) => (
+                  <figure key={image.label}>
+                    <figcaption className="mb-2 text-base font-semibold text-primary">
+                      {image.label}
+                    </figcaption>
+                    <a
+                      href={image.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${item.name} LinkedIn ${image.label}, full image`}
+                    >
+                      <img
+                        src={image.url}
+                        alt={`${item.name} LinkedIn ${image.label}`}
+                        loading="lazy"
+                        className="aspect-[3/4] w-full rounded-lg border border-border object-cover object-top"
+                      />
+                    </a>
+                  </figure>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {[
+            { name: "Authority Author LinkedIn Profile", url: showcase1.url },
+            { name: "Advisory & Tax Planning LinkedIn Profile", url: showcase2.url },
+          ].map((item) => (
+            <a key={item.name} href={item.url} target="_blank" rel="noopener noreferrer">
+              <img
+                src={item.url}
+                alt={item.name}
+                loading="lazy"
+                className="aspect-[4/5] w-full rounded-lg border border-border object-cover object-top"
+              />
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function TestimonialGallery() {
   return (
     <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-6 lg:grid-cols-12">
