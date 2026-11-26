@@ -32,4 +32,7 @@ use the editor.
 - Keep shared contact links, enquiry validation and package data in `src/lib/website-content.ts` so pages and tests use one source of truth.
 - Use the shared Button contact/whatsapp variants for the two primary CTAs to retain consistent appearance.
 - Enquiry submission must not show success until a configured sending service confirms delivery acceptance; sender-domain setup currently blocks delivery.
+- Keep email-app handoff in `buildEnquiryMailto()` and show a draft status, not delivery confirmation, because opening an email app cannot verify sending.
+- Store genuine client portraits in a single array so the trusted-client row can expand without layout changes.
+- Use global fixed breakpoint typography and semantic light-theme tokens so all existing pages share accessible sizing and colours.
 - Present supplied proof without modal previews and use inline mobile navigation to avoid pop-ups.

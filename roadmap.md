@@ -1,9 +1,13 @@
 # Website update
+- [x] Apply the supplied light visual brief without changing signed-off copy or metadata.
+- [x] Add Aanu's supplied portrait to Home and About.
+- [x] Add encoded enquiry email handoff and field validation without claiming delivery.
+- [ ] Expand the client row and add footer social links — awaiting genuine extra photos and official URLs.
 - [x] Apply approved copy to Home, Services, About, and Contact; preserve current design and full logo.
 - [x] Update navigation, footer, and direct WhatsApp CTAs.
 - [x] Implement enquiry fields and truthful email submission state.
 - [ ] Connect actual email delivery — blocked by unconfigured sender domain.
 - [x] Add an accurate Privacy Policy.
-- [x] Verify pages on mobile and desktop and test enquiry rules (10 tests passed; all five pages checked at 320, 375, 594 and 1280px).
-- [ ] Obtain Aanu's portrait and official social URLs if unavailable.
+- [x] Verify pages on mobile and desktop and test enquiry rules (14 tests passed; all five pages checked at 390, 594 and 1280px).
+- [x] Obtain Aanu's portrait.
 - [ ] Confirm email provider and enquiry retention for the privacy policy — awaiting client details.

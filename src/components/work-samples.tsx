@@ -26,8 +26,9 @@ const TESTIMONIALS = [
   { author: "Toyin", url: testimonialToyin.url }, { author: "Raj", url: testimonialRaj.url },
   { author: "Richard", url: testimonialRichard.url }, { author: "Olayinka", url: testimonialOlayinka.url }, { author: "Abi", url: testimonialAbi.url },
 ];
+const CLIENT_PHOTOS = [{ name: "Claire", photo: clairePhoto.url }, { name: "Richard", photo: richardPhoto.url }];
 export function ClientPhotos() {
-  return <div className="mt-5 flex flex-wrap gap-6">{[{ name: "Claire", url: clairePhoto.url }, { name: "Richard", url: richardPhoto.url }].map(client => <figure key={client.name}><img src={client.url} alt={client.name} loading="lazy" className="h-20 w-20 rounded-full object-cover" /><figcaption className="mt-2 text-center text-base">{client.name}</figcaption></figure>)}</div>;
+  return <div className="client-photo-row">{CLIENT_PHOTOS.map(client => <figure key={client.name}><img src={client.photo} alt={client.name} loading="lazy" width={72} height={72} /><figcaption>{client.name}</figcaption></figure>)}</div>;
 }
 export function WorkSamples() {
   return <section className="border-t border-border/70 py-20"><div className="mx-auto max-w-5xl px-6"><h2 className="font-display text-3xl sm:text-4xl">LinkedIn transformations</h2>
@@ -36,5 +37,5 @@ export function WorkSamples() {
   </div></section>;
 }
 export function TestimonialGallery() {
-  return <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">{TESTIMONIALS.map(card => <figure key={card.author} className="overflow-hidden rounded-lg border border-surface-light-border"><a href={card.url} target="_blank" rel="noopener noreferrer"><img src={card.url} alt={`Client review from ${card.author}`} loading="lazy" className="h-auto w-full" /></a><figcaption className="px-4 py-3 text-base font-semibold text-surface-light-muted">{card.author}</figcaption></figure>)}</div>;
+  return <div className="mt-12 divide-y divide-border">{TESTIMONIALS.map(card => <figure key={card.author} className="grid items-start gap-6 py-8 sm:grid-cols-[140px_1fr]"><figcaption className="flex items-center gap-4 text-base font-semibold text-muted-foreground">{CLIENT_PHOTOS.find(client => client.name === card.author) && <img src={CLIENT_PHOTOS.find(client => client.name === card.author)?.photo} alt={card.author} loading="lazy" className="h-14 w-14 rounded-full object-cover" />}{card.author}</figcaption><a href={card.url} target="_blank" rel="noopener noreferrer" className="min-w-0"><img src={card.url} alt={`Client review from ${card.author}`} loading="lazy" className="h-auto w-full max-w-2xl" /></a></figure>)}</div>;
 }

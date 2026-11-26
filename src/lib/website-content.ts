@@ -25,12 +25,18 @@ export const enquirySchema = z.object({
 });
 
 export function enquirySubject(service: string) {
-  return `New enquiry: ${service}`;
+  return `New enquiry: ${service || "General"}`;
+}
+
+export function buildEnquiryMailto(enquiry: { name: string; email: string; phone: string; service: string; message: string }) {
+  const body = [`Name: ${enquiry.name}`, `Email: ${enquiry.email}`, `Phone: ${enquiry.phone}`, `Service: ${enquiry.service}`, "", "Message:", enquiry.message.replace(/\r?\n/g, "\r\n")].join("\r\n");
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(enquirySubject(enquiry.service))}&body=${encodeURIComponent(body)}`;
 }
 
 export function enquiryConfirmation(name: string) {
-  const firstName = name.trim().split(/\s+/)[0] ?? name;
-  return `Thank you, ${firstName}! We've got your message and we'll be in touch within one working day. Can't wait? Send us a WhatsApp on +44 7925 171979.`;
+  const firstName = name.trim().split(/\s+/)[0] ?? "";
+  const greeting = firstName ? `Thank you, ${firstName.charAt(0).toUpperCase()}${firstName.slice(1)}!` : "Thank you!";
+  return `${greeting} We've got your message and we'll be in touch within one working day. Can't wait? Send us a WhatsApp on +44 7925 171979.`;
 }
 
 export const HOME_SERVICES = [

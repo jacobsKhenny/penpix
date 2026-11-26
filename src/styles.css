@@ -76,85 +76,51 @@
   --color-surface-light-foreground: var(--surface-light-foreground);
   --color-surface-light-muted: var(--surface-light-muted);
   --color-surface-light-border: var(--surface-light-border);
+  --color-brand: var(--brand);
+  --color-brand-dark: var(--brand-dark);
+  --color-gold: var(--accent-gold);
+  --color-page-alt: var(--page-alt);
   --color-whatsapp: var(--whatsapp);
   --color-whatsapp-foreground: var(--whatsapp-foreground);
 }
 
-:root {
-  --radius: 0.5rem;
-  --background: oklch(0.08 0 0);
-  --foreground: oklch(0.98 0 0);
-  --card: oklch(0.13 0 0);
-  --card-foreground: oklch(0.98 0 0);
-  --popover: oklch(0.12 0 0);
-  --popover-foreground: oklch(0.98 0 0);
-  --primary: oklch(0.82 0.17 85);
-  --primary-foreground: oklch(0.12 0 0);
-  --secondary: oklch(0.36 0 0);
-  --secondary-foreground: oklch(0.98 0 0);
-  --muted: oklch(0.16 0 0);
-  --muted-foreground: oklch(0.72 0 0);
-  --accent: oklch(0.2 0 0);
-  --accent-foreground: oklch(0.98 0 0);
-  --destructive: oklch(0.62 0.22 25);
-  --destructive-foreground: oklch(0.98 0 0);
-  --border: oklch(0.24 0 0);
-  --input: oklch(0.28 0 0);
-  --ring: oklch(0.82 0.17 85);
-  --surface-light: oklch(0.99 0 0);
-  --surface-light-foreground: oklch(0.11 0 0);
-  --surface-light-muted: oklch(0.45 0 0);
-  --surface-light-border: oklch(0.88 0 0);
+:root, .dark {
+  --radius: 0.375rem;
+  --page: oklch(1.000000 0.000000 89.8756);
+  --page-alt: oklch(0.965352 0.006227 75.4066);
+  --page-deep: oklch(0.204184 0.007569 48.3300);
+  --ink: oklch(0.185962 0.008914 59.0606);
+  --ink-soft: oklch(0.448063 0.014300 59.2925);
+  --line: oklch(0.903107 0.012643 75.3600);
+  --brand: oklch(0.603110 0.229853 22.0092);
+  --brand-dark: oklch(0.548900 0.208342 21.7249);
+  --accent-gold: oklch(0.693068 0.143400 73.1705);
+  --accent-soft: oklch(0.959365 0.016848 56.1912);
+  --background: var(--page);
+  --foreground: var(--ink);
+  --card: var(--page);
+  --card-foreground: var(--ink);
+  --popover: var(--page);
+  --popover-foreground: var(--ink);
+  --primary: var(--brand-dark);
+  --primary-foreground: var(--page);
+  --secondary: var(--page-alt);
+  --secondary-foreground: var(--ink);
+  --muted: var(--page-alt);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--accent-soft);
+  --accent-foreground: var(--ink);
+  --destructive: var(--brand-dark);
+  --destructive-foreground: var(--page);
+  --border: var(--line);
+  --input: var(--line);
+  --ring: var(--brand-dark);
+  --surface-light: var(--page);
+  --surface-light-foreground: var(--ink);
+  --surface-light-muted: var(--ink-soft);
+  --surface-light-border: var(--line);
   --whatsapp: oklch(0.64 0.19 149);
-  --whatsapp-foreground: oklch(0.99 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.984 0.003 247.858);
-  --sidebar-foreground: oklch(0.129 0.042 264.695);
-  --sidebar-primary: oklch(0.208 0.042 265.755);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.968 0.007 247.896);
-  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
-  --sidebar-border: oklch(0.929 0.013 255.508);
-  --sidebar-ring: oklch(0.704 0.04 256.788);
-}
-
-.dark {
-  --background: oklch(0.129 0.042 264.695);
-  --foreground: oklch(0.984 0.003 247.858);
-  --card: oklch(0.208 0.042 265.755);
-  --card-foreground: oklch(0.984 0.003 247.858);
-  --popover: oklch(0.208 0.042 265.755);
-  --popover-foreground: oklch(0.984 0.003 247.858);
-  --primary: oklch(0.929 0.013 255.508);
-  --primary-foreground: oklch(0.208 0.042 265.755);
-  --secondary: oklch(0.279 0.041 260.031);
-  --secondary-foreground: oklch(0.984 0.003 247.858);
-  --muted: oklch(0.279 0.041 260.031);
-  --muted-foreground: oklch(0.704 0.04 256.788);
-  --accent: oklch(0.279 0.041 260.031);
-  --accent-foreground: oklch(0.984 0.003 247.858);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.551 0.027 264.364);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.208 0.042 265.755);
-  --sidebar-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-accent: oklch(0.279 0.041 260.031);
-  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.551 0.027 264.364);
+  --whatsapp-foreground: var(--page);
 }
 
 @layer base {
@@ -180,17 +146,17 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 9999px;
+  border-radius: 6px;
   background-color: var(--color-destructive);
   color: var(--color-destructive-foreground);
   font-weight: 600;
   font-size: 1rem;
   padding: 0.65rem 1.35rem;
-  transition: opacity 150ms ease, transform 150ms ease;
+  transition: background-color 150ms ease;
 }
 
 .btn-pill-primary:hover {
-  opacity: 0.92;
+  background-color: var(--brand);
 }
 
 .btn-pill-secondary {
@@ -198,17 +164,17 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  border-radius: 9999px;
+  border-radius: 6px;
   background-color: var(--color-whatsapp);
   color: var(--color-whatsapp-foreground);
   font-weight: 600;
   font-size: 1rem;
   padding: 0.65rem 1.35rem;
-  transition: opacity 150ms ease, transform 150ms ease;
+  transition: background-color 150ms ease;
 }
 
 .btn-pill-secondary:hover {
-  opacity: 0.88;
+  background-color: color-mix(in oklab, var(--whatsapp) 88%, var(--ink));
 }
 
 .field-input {
@@ -225,4 +191,44 @@
 .field-input:focus {
   outline: none;
   border-color: var(--color-primary);
+}
+
+/* Editorial type is fixed at each breakpoint, with no viewport-scaled text. */
+@layer base {
+  body { font-size: 1.125rem; line-height: 1.65; }
+  h1, h2, h3 { text-wrap: balance; letter-spacing: 0; }
+  h1 { font-size: 2.5rem !important; line-height: 1.04 !important; }
+  h2 { font-size: 1.9rem !important; line-height: 1.12 !important; }
+  h3 { font-size: 1.3rem !important; line-height: 1.25 !important; }
+  p { text-wrap: pretty; max-width: 66ch; }
+  p:not([aria-label]), li { font-size: inherit; }
+  a, button, input, select, textarea, label, figcaption { font-size: max(1rem, 1em); }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--ring); outline-offset: 4px;
+  }
+}
+main p.text-base, main div.text-base { font-size: 1.125rem; }
+main > section, main > div { padding-top: 56px; padding-bottom: 56px; }
+main section { scroll-margin-top: 96px; }
+.step-number { font-family: var(--font-display); font-size: 4.5rem; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--accent-gold); }
+.hero-lead { font-size: 1.2rem !important; line-height: 1.5; }
+.client-photo-row { display: flex; flex-wrap: wrap; gap: 24px 0; margin-top: 24px; padding-left: 16px; max-width: 100%; }
+.client-photo-row figure { width: 56px; margin-left: -16px; }
+.client-photo-row img { width: 56px; height: 56px; border: 2px solid var(--page); border-radius: 50%; object-fit: cover; }
+.client-photo-row figcaption { margin-top: 8px; font-size: 1rem; color: var(--ink-soft); text-align: center; }
+.enquiry-status { background: var(--accent-soft); border-left: 3px solid var(--brand); padding: 32px; scroll-margin-top: 120px; }
+.btn-pill-secondary.fixed { border-radius: 50%; }
+@media (min-width: 768px) {
+  body { font-size: 1.1875rem; }
+  @layer base {
+    h1 { font-size: 4rem !important; }
+    h2 { font-size: 3rem !important; }
+    h3 { font-size: 1.6rem !important; }
+  }
+  main p.text-base, main div.text-base { font-size: 1.1875rem; }
+  main > section, main > div { padding-top: 96px; padding-bottom: 96px; }
+  .hero-lead { font-size: 1.45rem !important; }
+  .client-photo-row figure { width: 72px; }
+  .client-photo-row img { width: 72px; height: 72px; }
+  .step-number { font-size: 6rem; }
 }
