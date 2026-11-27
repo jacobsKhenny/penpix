@@ -28,7 +28,7 @@ function Index() {
       <div className="min-w-0"><h1 className="font-display text-foreground">Personal branding on LinkedIn and social media, for business owners.</h1>
       <p className="hero-lead mt-8 max-w-2xl text-muted-foreground">We sort out your LinkedIn, Facebook and Instagram, so the right people find you, trust you and get in touch. You don't lift a finger.</p>
       <ContactActions />
-      </div><img src={aanuPhoto.url} alt="Aanu Clement David-Olawade, founder of PenPixel Digital Press" width={768} height={768} fetchPriority="high" className="aspect-[4/5] w-full max-w-[520px] justify-self-center rounded-md object-cover lg:justify-self-end" />
+            </div><img src="/__l5e/assets-v1/d01eee92-de69-4d1f-a43b-320b04987016/linkedin-showcase-1.jpeg" alt="A LinkedIn profile rebuilt by PenPixel" width={768} height={960} fetchPriority="high" className="aspect-[4/5] w-full max-w-[520px] justify-self-center rounded-md border border-border object-cover object-top lg:justify-self-end" />
     </section>
     <section className="border-t border-border/70 bg-page-alt py-20">
       <div className="mx-auto max-w-5xl px-6">
